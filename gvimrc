@@ -9,3 +9,4 @@ set guioptions-=l
 
 hi ColorColumn guibg=#e9e9e9
 au FocusLost * silent! wall
+
