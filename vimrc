@@ -6,11 +6,14 @@ call vundle#rc()
 
 " My Bundles, the first one is required by vundle!
 Bundle 'gmarik/vundle'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'phleet/vim-mercenary'
 Bundle 'scrooloose/nerdtree'
 Bundle 'klen/python-mode'
 Bundle 'davidhalter/jedi-vim'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
+Bundle 'altercation/vim-colors-solarized'
 
 
 " Generic settings
@@ -19,11 +22,11 @@ filetype plugin indent on
 set encoding=utf-8
 set incsearch
 set hlsearch
-set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 set smartcase
-set scrolloff=5
+set scrolloff=7
 set history=50
 set wildmenu
+set autoread
 
 set tabstop=8
 set shiftwidth=4
@@ -50,6 +53,31 @@ au InsertLeave * :set rnu
 set colorcolumn=80
 hi ColorColumn ctermbg=darkgrey
 
+" Settings for graphical version
+if has("gui_running")
+    " Different colorschemes are available
+    "colorscheme ir_dark
+    "colorscheme pyte
+    "colorscheme railscasts
+    "colorscheme temp_ir_dark
+    "colorscheme twilight
+    "colorscheme wombat
+    colorscheme xoria256
+
+    set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
+    set columns=150
+    set lines=50
+    set guifont=DejaVu\ Sans\ Mono\ 13
+    set guioptions-=T
+    set guioptions-=r
+    set guioptions-=l
+
+    hi ColorColumn guibg=#e9e9e9
+    au FocusLost * silent! wall
+else
+    set bg=dark
+endif
+
 " key bindings
 let mapleader = ","
 inoremap jj <Esc>
@@ -66,7 +94,7 @@ nnoremap <F1> <Esc>
 vnoremap <F1> <Esc>
 inoremap <F1> <Esc>
 
-" vim-airline setup
+" Powerline setup
 set laststatus=2
 
 " Nerd-Tree settings
