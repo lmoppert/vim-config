@@ -39,6 +39,14 @@ set nospell
 set spelllang=de,en
 set spellfile=~/.vim/spell/de.add
 
+" Use line numbering and change mode to relative, when in insert mode
+set number
+set relativenumber
+set ruler
+set cursorline
+au InsertEnter * :set nu
+au InsertLeave * :set rnu
+
 set colorcolumn=80
 hi ColorColumn ctermbg=darkgrey
 
