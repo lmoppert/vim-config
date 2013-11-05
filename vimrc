@@ -1,7 +1,11 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
+if has("win32")
+    set rtp+=c:\progra~2\Vim\vimfiles\bundle\vundle
+else
+    set rtp+=~/.vim/bundle/vundle/
+endif
 call vundle#rc()
 
 " My Bundles, the first one is required by vundle!
@@ -18,6 +22,7 @@ Bundle 'altercation/vim-colors-solarized'
 
 " Generic settings
 filetype plugin indent on
+syntax on
 
 set encoding=utf-8
 set incsearch
@@ -67,13 +72,18 @@ if has("gui_running")
     set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
     set columns=150
     set lines=50
-    set guifont=DejaVu\ Sans\ Mono\ 13
     set guioptions-=T
     set guioptions-=r
     set guioptions-=l
 
     hi ColorColumn guibg=#e9e9e9
     au FocusLost * silent! wall
+
+    if has("win32")
+        set guifont=DejaVu_Sans_Mono_for_Powerline:h11:cANSI
+    else
+        set guifont=DejaVu\ Sans\ Mono\ 13
+    endif
 else
     set bg=dark
 endif
