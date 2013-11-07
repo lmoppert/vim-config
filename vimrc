@@ -20,6 +20,7 @@ Bundle 'lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'vimoutliner/vimoutliner'
 
 
 " Generic settings -----------------------------------------------------------
