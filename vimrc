@@ -3,10 +3,9 @@ set nocompatible
 filetype off
 
 if has("win32")
-    set rtp+=c:\progra~2\Vim\vimfiles\bundle\vundle
-else
-    set rtp+=~/.vim/bundle/vundle/
+    set runtimepath+=$HOME/.vim
 endif
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " My Bundles -----------------------------------------------------------------
@@ -20,6 +19,7 @@ Bundle 'lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'vimoutliner/vimoutliner'
 
 
 " Generic settings -----------------------------------------------------------
@@ -44,6 +44,7 @@ set scrolloff=7
 set history=50
 
 " Editing --------------------------------------------------------------------
+set backspace=2
 set ruler
 set cursorline
 set colorcolumn=80
@@ -72,9 +73,9 @@ if has("gui_running")
     "colorscheme ir_dark
     "colorscheme pyte
     "colorscheme railscasts
-    colorscheme temp_ir_dark
+    "colorscheme temp_ir_dark
     "colorscheme twilight
-    "colorscheme wombat
+    colorscheme wombat
     "colorscheme xoria256
 
     " Appearance -------------------------------------------------------------
