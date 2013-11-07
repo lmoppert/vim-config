@@ -3,10 +3,9 @@ set nocompatible
 filetype off
 
 if has("win32")
-    set rtp+=c:\progra~2\Vim\vimfiles\bundle\vundle
-else
-    set rtp+=~/.vim/bundle/vundle/
+    set runtimepath+=$HOME/.vim
 endif
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " My Bundles -----------------------------------------------------------------
