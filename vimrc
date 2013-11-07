@@ -85,8 +85,10 @@ if has("gui_running")
     set guioptions-=l
     set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 
-    if has("win32") || has("mac")
-        set guifont=DejaVu_Sans_Mono_for_Powerline:h11
+    if has("win32")
+        set guifont=DejaVu_Sans_Mono_for_Powerline:h11:cANSI
+    elseif has("mac")
+        set guifont=DejaVu_Sans_Mono_for_Powerline:h15
     else
         set guifont=DejaVu\ Sans\ Mono\ 13
     endif
