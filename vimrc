@@ -44,6 +44,7 @@ set scrolloff=7
 set history=50
 
 " Editing --------------------------------------------------------------------
+set backspace=2
 set ruler
 set cursorline
 set colorcolumn=80
@@ -72,9 +73,9 @@ if has("gui_running")
     "colorscheme ir_dark
     "colorscheme pyte
     "colorscheme railscasts
-    colorscheme temp_ir_dark
+    "colorscheme temp_ir_dark
     "colorscheme twilight
-    "colorscheme wombat
+    colorscheme wombat
     "colorscheme xoria256
 
     " Appearance -------------------------------------------------------------
