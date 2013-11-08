@@ -15,11 +15,11 @@ Bundle 'phleet/vim-mercenary'
 Bundle 'scrooloose/nerdtree'
 Bundle 'klen/python-mode'
 Bundle 'davidhalter/jedi-vim'
-Bundle 'lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'vimoutliner/vimoutliner'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
 
 
 " Generic settings -----------------------------------------------------------
@@ -44,6 +44,7 @@ set scrolloff=7
 set history=50
 
 " Editing --------------------------------------------------------------------
+set textwidth=79
 set backspace=2
 set ruler
 set cursorline
@@ -103,6 +104,13 @@ endif
 let mapleader = ","
 inoremap jj <Esc>
 nnoremap <leader><space> :noh<cr>
+" split windows horizontaly
+nnoremap <leader>w <C-w>v<C-w>l
+" reformat paragraph to corrext line length
+nnoremap <leader>q gqip
+" Mapping for notes.ini correction
+nnoremap <leader>c :%s/NCMenu,*//g<CR>:%s/NCExtMgr,*//g<CR>
+
 
 " Moving between split windows -----------------------------------------------
 nnoremap <C-h> <C-w>h
