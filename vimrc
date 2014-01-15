@@ -46,6 +46,7 @@ set history=50
 " Editing --------------------------------------------------------------------
 set textwidth=79
 set backspace=2
+set background=dark
 set ruler
 set cursorline
 set colorcolumn=80
