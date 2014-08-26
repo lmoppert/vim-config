@@ -20,6 +20,9 @@ Bundle 'tpope/vim-repeat'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'vimoutliner/vimoutliner'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
+Bundle 'vim-scripts/hexHighlight.vim'
+Bundle 'jcf/vim-latex'
+Bundle 'PProvost/vim-ps1'
 
 
 " Generic settings -----------------------------------------------------------
@@ -76,7 +79,7 @@ if has("gui_running")
     "colorscheme railscasts
     "colorscheme temp_ir_dark
     "colorscheme twilight
-    colorscheme wombat
+    colorscheme wombat_vo
     "colorscheme xoria256
 
     " Appearance -------------------------------------------------------------
