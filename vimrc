@@ -4,7 +4,10 @@ filetype off
 
 if has("win32")
     set runtimepath+=$HOME/.vim
+    set shell=powershell
+    set shellcmdflag=-command
 endif
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -70,7 +73,6 @@ set number
 set relativenumber
 au InsertEnter * :set nu
 au InsertLeave * :set rnu
-
 
 " GUI Settings ---------------------------------------------------------------
 if has("gui_running")
