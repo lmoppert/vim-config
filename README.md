@@ -22,7 +22,7 @@ here.
 For the other OS, you create the file `~/.vimrc` with `source ~/.vim/vimrc` in
 it.
 
-## Prequesits
+## Prerequisites
 In order to use the vimrc contained in this Project, a graphical
 vi, Python, Git and Mercurial should already be installed.
 
