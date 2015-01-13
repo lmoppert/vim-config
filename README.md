@@ -41,6 +41,10 @@ you can start to install the Bundles immediately. To do so, start vim and
 install the Bundles with `:BundleInstall`. Afterwards restart vim to use the
 newly installed bundles.
 
+For the Powerline plugin you need to patch the fonts as it is using some 
+custom glyphs. Details can be found in the [Powerline documentation](
+https://powerline.readthedocs.org/en/latest/installation.html).
+
 This repository is also used by me to backup my own cofigruation. As it is
 quite unlikely that you need to have the same entrys in your spellfile
 (`.vim/spell/spell*`), I highly recommend to delete it. It will be recreated
