@@ -1,9 +1,9 @@
 vim-config
 ==========
 
-Vim configuration for python, django and LaTeX development. (LaTeX support has
-not been added yet!). Additionally vimoutliner is included, as I am using it 
-for all kind of lists, be it ToDo, Project Tasks ...
+Vim configuration for python, django and LaTeX development. Additionally 
+vimoutliner is included, as I am using it for all kind of lists, be it 
+ToDo, Project Tasks ...
 
 The environment I am working with is very heterogeneous. It should work for
 Linux, Windows and Mac. The configuration is stored in `~/.vim`, which is very
