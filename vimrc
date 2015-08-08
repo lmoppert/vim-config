@@ -2,13 +2,16 @@
 set nocompatible
 filetype off
 if (has('win32') || has('win64'))
+    set shellslash
     set runtimepath+=$HOME/vimfiles
+    set runtimepath+=$HOME/vimfiles/bundle
     set runtimepath+=$HOME/vimfiles/bundle/Vundle.vim
     set backupdir=$HOME/vimfiles/backup
     set spellfile=$HOME/vimfiles/spell/de.add
     let bundle_path='$HOME/vimfiles/bundle'
 else
     set runtimepath+=~/.vim
+    set runtimepath+=~/.vim/bundle
     set runtimepath+=~/.vim/bundle/Vundle.vim
     set backupdir=~/.vim/backup
     set spellfile=~/.vim/spell/de.add
@@ -25,7 +28,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vimoutliner/vimoutliner'
 Plugin 'scrooloose/nerdtree'
-Plugin 'jcf/vim-latex'
+Plugin 'vim-latex/vim-latex'
 Plugin 'vim-scripts/hexHighlight.vim'
 Plugin 'ludovicchabant/vim-lawrencium'
 Plugin 'PProvost/vim-ps1'
@@ -148,3 +151,7 @@ let NERDTreeIgnore=['\~$','\.sw.$','\.pyc$']
 " Python-Mode settings -------------------------------------------------------
 let g:pymode_rope = 0
 let g:jedi#usages_command = "<leader>l"
+
+" LaTeX-Suite settings -------------------------------------------------------
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
