@@ -155,3 +155,5 @@ let g:jedi#usages_command = "<leader>l"
 " LaTeX-Suite settings -------------------------------------------------------
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_MultipleCompileFormats='dvi,pdf'
