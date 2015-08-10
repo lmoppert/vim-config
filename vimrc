@@ -20,7 +20,7 @@ endif
 
 " Manage Plugins -------------------------------------------------------------
 call vundle#begin(bundle_path)
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'klen/python-mode'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'tpope/vim-surround'
