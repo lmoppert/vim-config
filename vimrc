@@ -145,3 +145,6 @@ let NERDTreeIgnore=['\~$','\.sw.$','\.pyc$']
 " Python-Mode settings -------------------------------------------------------
 let g:pymode_rope = 0
 let g:jedi#usages_command = "<leader>l"
+
+" Highlighting nginx conf files ----------------------------------------------
+autocmd BufRead,BufNewFile /etc/nginx/sites-*/* setfiletype conf
