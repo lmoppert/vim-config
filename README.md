@@ -1,9 +1,9 @@
 vim-config
 ==========
 
-Vim configuration for python, django and LaTeX development. (LaTeX support has
-not been added yet!). Additionally vimoutliner is included, as I am using it 
-for all kind of lists, be it ToDo, Project Tasks ...
+Vim configuration for python, django and LaTeX development. Additionally 
+vimoutliner is included, as I am using it for all kind of lists, be it 
+ToDo, Project Tasks ...
 
 The environment I am working with is very heterogeneous. It should work for
 Linux, Windows and Mac. The configuration is stored in `~/.vim`, which is very
@@ -40,6 +40,10 @@ This also clones the bundle/vundle repository into `~/.vim/bundle/vundle` so
 you can start to install the Bundles immediately. To do so, start vim and
 install the Bundles with `:BundleInstall`. Afterwards restart vim to use the
 newly installed bundles.
+
+For the Powerline plugin you need to patch the fonts as it is using some 
+custom glyphs. Details can be found in the [Powerline documentation](
+https://powerline.readthedocs.org/en/latest/installation.html#fonts-installation).
 
 This repository is also used by me to backup my own cofigruation. As it is
 quite unlikely that you need to have the same entrys in your spellfile

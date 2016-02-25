@@ -1,35 +1,43 @@
-" Init Vundle ----------------------------------------------------------------
+﻿" Init Vundle ----------------------------------------------------------------
 set nocompatible
 filetype off
-
-if has("win32")
-    set runtimepath+=$HOME/.vim
-    set shell=powershell
-    set shellcmdflag=-command
+if (has('win32') || has('win64'))
+    set shellslash
+    set runtimepath+=$HOME/vimfiles
+    set runtimepath+=$HOME/vimfiles/bundle
+    set runtimepath+=$HOME/vimfiles/bundle/Vundle.vim
+    set backupdir=$HOME/vimfiles/backup
+    set spellfile=$HOME/vimfiles/spell/de.add
+    let bundle_path='$HOME/vimfiles/bundle'
+else
+    set runtimepath+=~/.vim
+    set runtimepath+=~/.vim/bundle
+    set runtimepath+=~/.vim/bundle/Vundle.vim
+    set backupdir=~/.vim/backup
+    set spellfile=~/.vim/spell/de.add
+    let bundle_path='~/.vim/bundle'
 endif
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" My Bundles -----------------------------------------------------------------
-Bundle 'gmarik/vundle'
-Bundle 'vim-scripts/hgrev'
-Bundle 'phleet/vim-mercenary'
-Bundle 'scrooloose/nerdtree'
-Bundle 'klen/python-mode'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'vimoutliner/vimoutliner'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
-Bundle 'vim-scripts/hexHighlight.vim'
-Bundle 'jcf/vim-latex'
-Bundle 'PProvost/vim-ps1'
-
+" Manage Plugins -------------------------------------------------------------
+call vundle#begin(bundle_path)
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'klen/python-mode'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'vimoutliner/vimoutliner'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-latex/vim-latex'
+Plugin 'vim-scripts/hexHighlight.vim'
+Plugin 'ludovicchabant/vim-lawrencium'
+Plugin 'PProvost/vim-ps1'
+Plugin 'bling/vim-airline'
+"Bundle 'vim-scripts/hgrev'
+call vundle#end()
+filetype plugin indent on
 
 " Generic settings -----------------------------------------------------------
-filetype plugin indent on
 syntax on
 set encoding=utf-8
 set wildmenu
@@ -61,12 +69,10 @@ hi ColorColumn ctermbg=darkgrey
 " File Options ---------------------------------------------------------------
 set autoread
 set backup
-set backupdir=~/.vim/backup/
 
 " Spell checking -------------------------------------------------------------
 set nospell
 set spelllang=de,en
-set spellfile=~/.vim/spell/de.add
 
 " Line Numbering -------------------------------------------------------------
 set number
@@ -117,6 +123,10 @@ nnoremap <leader>q gqip
 " Mapping for notes.ini correction
 nnoremap <leader>c :%s/NCMenu,*//g<CR>:%s/NCExtMgr,*//g<CR>
 
+" Airline settings -----------------------------------------------------------
+set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'wombat'
 
 " Moving between split windows -----------------------------------------------
 nnoremap <C-h> <C-w>h
@@ -128,10 +138,6 @@ nnoremap <C-l> <C-w>l
 nnoremap <F1> <Esc>
 vnoremap <F1> <Esc>
 inoremap <F1> <Esc>
-
-" Powerline setup ------------------------------------------------------------
-set laststatus=2
-let g:Powerline_theme = 'solarized'
 
 " Nerd-Tree settings ---------------------------------------------------------
 noremap <leader>n :NERDTreeToggle<cr>
@@ -148,3 +154,9 @@ let g:jedi#usages_command = "<leader>l"
 
 " Highlighting nginx conf files ----------------------------------------------
 autocmd BufRead,BufNewFile /etc/nginx/sites-*/* setfiletype conf
+
+" LaTeX-Suite settings -------------------------------------------------------
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_MultipleCompileFormats='dvi,pdf'
