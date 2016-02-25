@@ -1,6 +1,7 @@
 ﻿" Init Vundle ----------------------------------------------------------------
 set nocompatible
 filetype off
+
 if (has('win32') || has('win64'))
     set shellslash
     set runtimepath+=$HOME/vimfiles
@@ -32,7 +33,8 @@ Plugin 'vim-latex/vim-latex'
 Plugin 'vim-scripts/hexHighlight.vim'
 Plugin 'ludovicchabant/vim-lawrencium'
 Plugin 'PProvost/vim-ps1'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 "Bundle 'vim-scripts/hgrev'
 call vundle#end()
 filetype plugin indent on
@@ -97,7 +99,7 @@ if has("gui_running")
     set guioptions-=T
     set guioptions-=r
     set guioptions-=l
-    set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
+    "set list listchars=tab:▸⋅,trail:⋅,nbsp:⋅
 
     if has("win32")
         set guifont=DejaVu_Sans_Mono_for_Powerline:h11:cANSI
