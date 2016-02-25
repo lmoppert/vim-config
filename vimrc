@@ -154,6 +154,9 @@ let NERDTreeIgnore=['\~$','\.sw.$','\.pyc$']
 let g:pymode_rope = 0
 let g:jedi#usages_command = "<leader>l"
 
+" Highlighting nginx conf files ----------------------------------------------
+autocmd BufRead,BufNewFile /etc/nginx/sites-*/* setfiletype conf
+
 " LaTeX-Suite settings -------------------------------------------------------
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
