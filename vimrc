@@ -84,16 +84,8 @@ au InsertLeave * :set rnu
 
 " GUI Settings ---------------------------------------------------------------
 if has("gui_running")
-    " Colorscheme ------------------------------------------------------------
-    "colorscheme ir_dark
-    "colorscheme pyte
-    "colorscheme railscasts
-    "colorscheme temp_ir_dark
-    "colorscheme twilight
     colorscheme wombat_vo
-    "colorscheme xoria256
 
-    " Appearance -------------------------------------------------------------
     set columns=150
     set lines=50
     set guioptions-=T
@@ -112,6 +104,10 @@ if has("gui_running")
     " Other Settings ---------------------------------------------------------
     hi ColorColumn guibg=#e9e9e9
     au FocusLost * silent! wall
+endif
+
+if &diff
+    colorscheme evening
 endif
 
 " Key Bindings ---------------------------------------------------------------
