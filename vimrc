@@ -102,7 +102,7 @@ if has("gui_running")
     endif
 
     " Other Settings ---------------------------------------------------------
-    hi ColorColumn guibg=#e9e9e9
+    hi ColorColumn guibg=gray21
     au FocusLost * silent! wall
 endif
 
