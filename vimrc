@@ -35,6 +35,7 @@ Plugin 'ludovicchabant/vim-lawrencium'
 Plugin 'PProvost/vim-ps1'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'will133/vim-dirdiff'
 "Bundle 'vim-scripts/hgrev'
 call vundle#end()
 filetype plugin indent on
@@ -158,3 +159,9 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_MultipleCompileFormats='dvi,pdf'
+"
+" Diff-Mode settings ---------------------------------------------------------
+hi DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+hi DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+hi DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+hi DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
