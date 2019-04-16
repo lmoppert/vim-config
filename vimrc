@@ -35,6 +35,7 @@ Plugin 'ludovicchabant/vim-lawrencium'
 Plugin 'PProvost/vim-ps1'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'will133/vim-dirdiff'
 "Bundle 'vim-scripts/hgrev'
 call vundle#end()
 filetype plugin indent on
