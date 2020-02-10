@@ -3,6 +3,8 @@ set nocompatible
 filetype off
 if (has('win32') || has('win64'))
     set shellslash
+    set pythonthreehome=$HOME/AppData/Local/Programs/Python/Python38-32/
+    set pythonthreedll=python38.dll
     set runtimepath+=$HOME/vimfiles
     set runtimepath+=$HOME/vimfiles/bundle
     set runtimepath+=$HOME/vimfiles/bundle/Vundle.vim
@@ -25,20 +27,24 @@ Plugin 'klen/python-mode'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-fugitive'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vimoutliner/vimoutliner'
+Plugin 'isene/hyperlist.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-latex/vim-latex'
 Plugin 'vim-scripts/hexHighlight.vim'
 Plugin 'ludovicchabant/vim-lawrencium'
 Plugin 'PProvost/vim-ps1'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 "Bundle 'vim-scripts/hgrev'
 call vundle#end()
 filetype plugin indent on
 
 " Generic settings -----------------------------------------------------------
 syntax on
+scriptencoding utf-8
 set encoding=utf-8
 set wildmenu
 
@@ -97,7 +103,6 @@ if has("gui_running")
     set guioptions-=T
     set guioptions-=r
     set guioptions-=l
-    set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 
     if has("win32")
         set guifont=DejaVu_Sans_Mono_for_Powerline:h11:cANSI
@@ -110,6 +115,7 @@ if has("gui_running")
     " Other Settings ---------------------------------------------------------
     hi ColorColumn guibg=#e9e9e9
     au FocusLost * silent! wall
+    set list listchars=tab:»·,trail:·,nbsp:·
 endif
 
 " Key Bindings ---------------------------------------------------------------
@@ -157,3 +163,7 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_MultipleCompileFormats='dvi,pdf'
+let g:Tex_ViewRule_pdf='SumatraPDF'
+let g:Tex_AdvancedMath = 1
+let g:Tex_SmartQuoteOpen = ',,'
+let g:Tex_SmartQuoteClose = '``'
