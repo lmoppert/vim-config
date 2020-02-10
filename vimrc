@@ -1,6 +1,7 @@
-﻿" Init Vundle ----------------------------------------------------------------
+" Init Vundle ----------------------------------------------------------------
 set nocompatible
 filetype off
+
 if (has('win32') || has('win64'))
     set shellslash
     set pythonthreehome=$HOME/AppData/Local/Programs/Python/Python38-32/
@@ -38,7 +39,6 @@ Plugin 'ludovicchabant/vim-lawrencium'
 Plugin 'PProvost/vim-ps1'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-"Bundle 'vim-scripts/hgrev'
 call vundle#end()
 filetype plugin indent on
 
@@ -88,21 +88,14 @@ au InsertLeave * :set rnu
 
 " GUI Settings ---------------------------------------------------------------
 if has("gui_running")
-    " Colorscheme ------------------------------------------------------------
-    "colorscheme ir_dark
-    "colorscheme pyte
-    "colorscheme railscasts
-    "colorscheme temp_ir_dark
-    "colorscheme twilight
     colorscheme wombat_vo
-    "colorscheme xoria256
 
-    " Appearance -------------------------------------------------------------
     set columns=150
     set lines=50
     set guioptions-=T
     set guioptions-=r
     set guioptions-=l
+    "set list listchars=tab:▸⋅,trail:⋅,nbsp:⋅
 
     if has("win32")
         set guifont=DejaVu_Sans_Mono_for_Powerline:h11:cANSI
@@ -113,9 +106,13 @@ if has("gui_running")
     endif
 
     " Other Settings ---------------------------------------------------------
-    hi ColorColumn guibg=#e9e9e9
+    hi ColorColumn guibg=gray21
     au FocusLost * silent! wall
     set list listchars=tab:»·,trail:·,nbsp:·
+endif
+
+if &diff
+    colorscheme evening
 endif
 
 " Key Bindings ---------------------------------------------------------------
@@ -133,12 +130,6 @@ nnoremap <leader>c :%s/NCMenu,*//g<CR>:%s/NCExtMgr,*//g<CR>
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'wombat'
-
-" Moving between split windows -----------------------------------------------
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 
 " No help on F1 --------------------------------------------------------------
 nnoremap <F1> <Esc>
@@ -158,6 +149,9 @@ let NERDTreeIgnore=['\~$','\.sw.$','\.pyc$']
 let g:pymode_rope = 0
 let g:jedi#usages_command = "<leader>l"
 
+" Highlighting nginx conf files ----------------------------------------------
+autocmd BufRead,BufNewFile /etc/nginx/sites-*/* setfiletype conf
+
 " LaTeX-Suite settings -------------------------------------------------------
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
@@ -167,3 +161,9 @@ let g:Tex_ViewRule_pdf='SumatraPDF'
 let g:Tex_AdvancedMath = 1
 let g:Tex_SmartQuoteOpen = ',,'
 let g:Tex_SmartQuoteClose = '``'
+"
+" Diff-Mode settings ---------------------------------------------------------
+hi DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+hi DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+hi DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+hi DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
