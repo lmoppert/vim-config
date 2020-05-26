@@ -98,7 +98,8 @@ if has("gui_running")
     "set list listchars=tab:▸⋅,trail:⋅,nbsp:⋅
 
     if has("win32")
-        set guifont=DejaVu_Sans_Mono_for_Powerline:h11:cANSI
+        set renderoptions=type:directx
+        set guifont=Fira_Code_Regular:h11:W84:cANSI:qDRAFT
     elseif has("mac")
         set guifont=DejaVu_Sans_Mono_for_Powerline:h15
     else
