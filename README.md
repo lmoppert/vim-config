@@ -33,7 +33,11 @@ Bundle for the fancy status line.
 Clone the repository into `~/.vim` like so:
 
 ```Shell
+$ # Check out via HTTPS
 $ git clone --recursive https://github.com/lmoppert/vim-config.git ~/.vim
+$ #
+$ # Or check out via SSH, to be able to push with ssh key authentication
+$ git clone --recursive git@github.com:lmoppert/vim-config.git ~/.vim
 ```
 
 This also clones the bundle/vundle repository into `~/.vim/bundle/vundle` so
