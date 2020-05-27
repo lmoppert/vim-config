@@ -50,7 +50,7 @@ For the Powerline plugin you need to patch the fonts as it is using some custom
 glyphs. Details can be found in the [Powerline documentation](
 https://powerline.readthedocs.org/en/latest/installation.html#fonts-installation).
 A very convenient alternative is to use a font, that already contains extra
-glyphs for programmers, like Fira Code (my favorite), Inconsolata or Source
+glyphs for programmers, like Jetbrains Mono (my favorite), Fira Code, Inconsolata or Source
 Code Pro.
 
 This repository is also used by me to backup my own cofigruation. As it is
