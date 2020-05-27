@@ -99,7 +99,9 @@ if has("gui_running")
 
     if has("win32")
         set renderoptions=type:directx
-        set guifont=Fira_Code_Regular:h11:W84:cANSI:qDRAFT
+        set guifont=JetBrains_Mono:h11:cANSI:qDRAFT
+        "set guifont=Fira_Code_Retina:h11:W450:cANSI:qDRAFT
+        "set guifont=Fira_Code_Medium:h11:W500:cANSI:qDRAFT
     elseif has("mac")
         set guifont=DejaVu_Sans_Mono_for_Powerline:h15
     else
