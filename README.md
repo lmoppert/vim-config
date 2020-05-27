@@ -30,13 +30,14 @@ Even if you do not plan to develop Python, it will be needed by the Powerline
 Bundle for the fancy status line.
 
 ## Installation
-Clone the repository into `~/.vim` like so:
+Clone the repository into `~/.vim` either via HTTPS:
 
 ```Shell
-$ # Check out via HTTPS
 $ git clone --recursive https://github.com/lmoppert/vim-config.git ~/.vim
-$ #
-$ # Or check out via SSH, to be able to push with ssh key authentication
+```
+Or use SSH to be able to push updates with SSH key authentication:
+
+```Shell
 $ git clone --recursive git@github.com:lmoppert/vim-config.git ~/.vim
 ```
 
@@ -45,9 +46,12 @@ you can start to install the Bundles immediately. To do so, start vim and
 install the Bundles with `:BundleInstall`. Afterwards restart vim to use the
 newly installed bundles.
 
-For the Powerline plugin you need to patch the fonts as it is using some 
-custom glyphs. Details can be found in the [Powerline documentation](
+For the Powerline plugin you need to patch the fonts as it is using some custom
+glyphs. Details can be found in the [Powerline documentation](
 https://powerline.readthedocs.org/en/latest/installation.html#fonts-installation).
+A very convenient alternative is to use a font, that already contains extra
+glyphs for programmers, like Fira Code (my favorite), Inconsolata or Source
+Code Pro.
 
 This repository is also used by me to backup my own cofigruation. As it is
 quite unlikely that you need to have the same entrys in your spellfile
