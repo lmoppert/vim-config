@@ -1,46 +1,49 @@
-" Init Vundle ----------------------------------------------------------------
+" Init Settings --------------------------------------------------------------
 set nocompatible
-filetype off
 
 if (has('win32') || has('win64'))
-    set shellslash
-    set pythonthreehome=$HOME/AppData/Local/Programs/Python/Python38-32/
+    "set shellslash
+    set pythonthreehome=C:/Program\ Files/Python38
     set pythonthreedll=python38.dll
     set runtimepath+=$HOME/vimfiles
-    set runtimepath+=$HOME/vimfiles/bundle
-    set runtimepath+=$HOME/vimfiles/bundle/Vundle.vim
     set backupdir=$HOME/vimfiles/backup
     set spellfile=$HOME/vimfiles/spell/de.add
-    let bundle_path='$HOME/vimfiles/bundle'
 else
     set runtimepath+=~/.vim
-    set runtimepath+=~/.vim/bundle
-    set runtimepath+=~/.vim/bundle/Vundle.vim
     set backupdir=~/.vim/backup
     set spellfile=~/.vim/spell/de.add
-    let bundle_path='~/.vim/bundle'
 endif
 
 " Manage Plugins -------------------------------------------------------------
-call vundle#begin(bundle_path)
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'klen/python-mode'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-fugitive'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'vimoutliner/vimoutliner'
-Plugin 'isene/hyperlist.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-latex/vim-latex'
-Plugin 'vim-scripts/hexHighlight.vim'
-Plugin 'ludovicchabant/vim-lawrencium'
-Plugin 'PProvost/vim-ps1'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-call vundle#end()
-filetype plugin indent on
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'altercation/vim-colors-solarized'
+Plug 'vim-latex/vim-latex'
+Plug 'vim-scripts/hexHighlight.vim'
+Plug 'PProvost/vim-ps1'
+" Only one of the following makes sence
+Plug 'vimoutliner/vimoutliner'
+Plug 'isene/hyperlist.vim'
+" Suggestions from https://www.vimfromscratch.com/articles/vim-for-python/
+Plug 'davidhalter/jedi-vim'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-commentary'
+Plug 'jiangmiao/auto-pairs'
+"Plug 'jeetsukumaran/vim-pythonsense'
+"Plug 'liuchengxu/vista.vim'
+"Plug 'junegunn/fzf.vim'
+"Plug 'numirias/semshi'
+"Plug 'Vimjas/vim-python-pep8-indent'
+"Plug 'dense-analysis/ale'
+" Removals
+"Plug 'VundleVim/Vundle.vim'
+"Plug 'klen/python-mode'
+"Plug 'ludovicchabant/vim-lawrencium'
+call plug#end()
 
 " Generic settings -----------------------------------------------------------
 syntax on

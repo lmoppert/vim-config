@@ -20,5 +20,5 @@ tags
 
 # Other
 .DS_Store
-bundle/
+plugged/
 backup/
