@@ -8,8 +8,9 @@ ToDo, Project Tasks ...
 The environment I am working with is very heterogeneous. It should work for
 Linux, Windows and Mac. The configuration is stored in `~/.vim`, which is very
 common on Linux and Mac but not on Windows. The latter one is searching the
-configuration in someplace like `c:\Program Files\Vim\`. In order to get the
-config read, one should add a vimrc containing somethins like this:
+configuration in some place like `c:\Program Files\Vim\` or
+`%USERPROFILE%\vimfiles`. In order to get the config read, one should add a
+vimrc containing somethins like this:
 
 ```VimL
 set runtimepath+=$HOME\.vim
@@ -33,25 +34,23 @@ Bundle for the fancy status line.
 Clone the repository into `~/.vim` either via HTTPS:
 
 ```Shell
-$ git clone --recursive https://github.com/lmoppert/vim-config.git ~/.vim
+$ git clone https://github.com/lmoppert/vim-config.git ~/.vim
 ```
 Or use SSH to be able to push updates with SSH key authentication:
 
 ```Shell
-$ git clone --recursive git@github.com:lmoppert/vim-config.git ~/.vim
+$ git clone git@github.com:lmoppert/vim-config.git ~/.vim
 ```
 
-This also clones the bundle/vundle repository into `~/.vim/bundle/vundle` so
-you can start to install the Bundles immediately. To do so, start vim and
-install the Bundles with `:BundleInstall`. Afterwards restart vim to use the
-newly installed bundles.
+To install the congigured plugins, start vim and type `PlugInstall`. Afterwards
+restart vim to use the newly installed plugins.
 
 For the Powerline plugin you need to patch the fonts as it is using some custom
 glyphs. Details can be found in the [Powerline documentation](
 https://powerline.readthedocs.org/en/latest/installation.html#fonts-installation).
 A very convenient alternative is to use a font, that already contains extra
-glyphs for programmers, like Jetbrains Mono (my favorite), Fira Code, Inconsolata or Source
-Code Pro.
+glyphs for programmers, like Jetbrains Mono (my favorite), Fira Code,
+Inconsolata or Source Code Pro.
 
 This repository is also used by me to backup my own cofigruation. As it is
 quite unlikely that you need to have the same entrys in your spellfile
