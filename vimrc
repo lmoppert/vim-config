@@ -8,45 +8,47 @@ if (has('win32') || has('win64'))
     set runtimepath+=$HOME/vimfiles
     set backupdir=$HOME/vimfiles/backup
     set spellfile=$HOME/vimfiles/spell/de.add
+    let s:plugdir='$HOME/vimfiles/bundle'
 else
     set runtimepath+=~/.vim
     set backupdir=~/.vim/backup
     set spellfile=~/.vim/spell/de.add
+    let s:plugdir='~/.vim/bundle'
 endif
 
 " Manage Plugins -------------------------------------------------------------
-call plug#begin('~/.vim/plugged')
+call plug#begin(s:plugdir)
+" Small helpers from Tim
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
+" Colors and syntax highlighting
 Plug 'altercation/vim-colors-solarized'
-Plug 'vim-latex/vim-latex'
+Plug 'gryf/wombat256grf'
 Plug 'vim-scripts/hexHighlight.vim'
+Plug 'sheerun/vim-polyglot'
+" Suggestions from https://www.vimfromscratch.com/articles/vim-for-python/
+Plug 'davidhalter/jedi-vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'dense-analysis/ale'
+"Plug 'jeetsukumaran/vim-pythonsense'
+" IDE functions
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+"Plug 'junegunn/fzf.vim'
+"Plug 'liuchengxu/vista.vim'
+" Other programming laguages
+Plug 'vim-latex/vim-latex'
 Plug 'PProvost/vim-ps1'
 " Only one of the following makes sence
 Plug 'vimoutliner/vimoutliner'
 Plug 'isene/hyperlist.vim'
-" Suggestions from https://www.vimfromscratch.com/articles/vim-for-python/
-Plug 'davidhalter/jedi-vim'
-Plug 'scrooloose/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-commentary'
-Plug 'jiangmiao/auto-pairs'
-"Plug 'jeetsukumaran/vim-pythonsense'
-"Plug 'liuchengxu/vista.vim'
-"Plug 'junegunn/fzf.vim'
-"Plug 'numirias/semshi'
-"Plug 'Vimjas/vim-python-pep8-indent'
-"Plug 'dense-analysis/ale'
-" Removals
-"Plug 'VundleVim/Vundle.vim'
-"Plug 'klen/python-mode'
-"Plug 'ludovicchabant/vim-lawrencium'
 call plug#end()
 
 " Generic settings -----------------------------------------------------------
-syntax on
 scriptencoding utf-8
 set encoding=utf-8
 set wildmenu
@@ -91,7 +93,7 @@ au InsertLeave * :set rnu
 
 " GUI Settings ---------------------------------------------------------------
 if has("gui_running")
-    colorscheme wombat_vo
+    colorscheme wombat256grf
 
     set columns=150
     set lines=50
@@ -132,6 +134,10 @@ nnoremap <leader>q gqip
 " Mapping for notes.ini correction
 nnoremap <leader>c :%s/NCMenu,*//g<CR>:%s/NCExtMgr,*//g<CR>
 
+" Python settings ------------------------------------------------------------
+au BufNewFile,BufRead *.py set foldmethod=indent
+noremap <space> za
+
 " Airline settings -----------------------------------------------------------
 set laststatus=2
 let g:airline_powerline_fonts = 1
@@ -151,10 +157,6 @@ let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=0
 let NERDTreeIgnore=['\~$','\.sw.$','\.pyc$']
 
-" Python-Mode settings -------------------------------------------------------
-let g:pymode_rope = 0
-let g:jedi#usages_command = "<leader>l"
-
 " Highlighting nginx conf files ----------------------------------------------
 autocmd BufRead,BufNewFile /etc/nginx/sites-*/* setfiletype conf
 
@@ -173,3 +175,6 @@ hi DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 hi DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 hi DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 hi DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+
+" Vimoutliner settings -------------------------------------------------------
+autocmd BufRead,BufNewFile *.otl colorscheme wombat_vo
