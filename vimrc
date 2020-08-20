@@ -40,9 +40,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 "Plug 'junegunn/fzf.vim'
 "Plug 'liuchengxu/vista.vim'
-" Other programming laguages
+" Other programming languages
 Plug 'vim-latex/vim-latex'
 Plug 'PProvost/vim-ps1'
+Plug 'OmniSharp/Omnisharp-vim'
 " Only one of the following makes sence
 Plug 'vimoutliner/vimoutliner'
 Plug 'isene/hyperlist.vim'
