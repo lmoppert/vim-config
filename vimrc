@@ -137,6 +137,11 @@ nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader>q gqip
 " Mapping for notes.ini correction
 nnoremap <leader>c :%s/NCMenu,*//g<CR>:%s/NCExtMgr,*//g<CR>
+" Easier moving between windows
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " Python settings ------------------------------------------------------------
 au BufNewFile,BufRead *.py set foldmethod=indent
