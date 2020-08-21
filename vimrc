@@ -148,6 +148,7 @@ au BufNewFile,BufRead *.py set foldmethod=indent
 noremap <space> za
 
 " Vista settings ------------------------------------------------------------
+noremap <leader>v :Vista!! <CR>
 let g:vista#renderer#enable_icon = 1
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 let g:vista_default_executive = 'ctags'
