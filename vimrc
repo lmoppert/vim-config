@@ -23,28 +23,31 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-speeddating'
 " Colors and syntax highlighting
-Plug 'altercation/vim-colors-solarized'
-Plug 'gryf/wombat256grf'
 Plug 'vim-scripts/hexHighlight.vim'
 Plug 'sheerun/vim-polyglot'
-" Suggestions from https://www.vimfromscratch.com/articles/vim-for-python/
+Plug 'altercation/vim-colors-solarized'
+Plug 'gryf/wombat256grf'
+Plug 'akmassey/vim-codeschool'
+" Python
 Plug 'davidhalter/jedi-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'dense-analysis/ale'
-"Plug 'jeetsukumaran/vim-pythonsense'
-" IDE functions
-Plug 'scrooloose/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-"Plug 'junegunn/fzf.vim'
-"Plug 'liuchengxu/vista.vim'
+Plug 'jeetsukumaran/vim-pythonsense'
 " Other programming languages
 Plug 'vim-latex/vim-latex'
 Plug 'PProvost/vim-ps1'
 Plug 'OmniSharp/Omnisharp-vim'
-" Only one of the following makes sence
+" IDE functions
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'liuchengxu/vista.vim'
+" Maybe only one of the following makes sence
 Plug 'vimoutliner/vimoutliner'
 Plug 'isene/hyperlist.vim'
 call plug#end()
@@ -138,6 +141,19 @@ nnoremap <leader>c :%s/NCMenu,*//g<CR>:%s/NCExtMgr,*//g<CR>
 " Python settings ------------------------------------------------------------
 au BufNewFile,BufRead *.py set foldmethod=indent
 noremap <space> za
+
+" Vista settings ------------------------------------------------------------
+let g:vista#renderer#enable_icon = 1
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+let g:vista_default_executive = 'ctags'
+let g:vista_executive_for = {
+  \ 'cpp': 'vim_lsp',
+  \ 'php': 'vim_lsp',
+  \ }
+let g:vista_ctags_cmd = {
+      \ 'haskell': 'hasktags -x -o - -c',
+      \ }
+let g:vista_fzf_preview = ['right:50%']
 
 " Airline settings -----------------------------------------------------------
 set laststatus=2
