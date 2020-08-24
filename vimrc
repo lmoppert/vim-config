@@ -135,19 +135,18 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <leader>w <C-w>v<C-w>l
 " reformat paragraph to corrext line length
 nnoremap <leader>q gqip
-" Mapping for notes.ini correction
-nnoremap <leader>c :%s/NCMenu,*//g<CR>:%s/NCExtMgr,*//g<CR>
 " Easier moving between windows
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+nnoremap <leader>c :vsplit $MYVIMRC<cr>
 
 " Python settings ------------------------------------------------------------
 au BufNewFile,BufRead *.py set foldmethod=indent
 noremap <space> za
 
-" Vista settings ------------------------------------------------------------
+" Vista settings -------------------------------------------------------------
 noremap <leader>v :Vista!! <CR>
 let g:vista#renderer#enable_icon = 1
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
@@ -172,7 +171,7 @@ vnoremap <F1> <Esc>
 inoremap <F1> <Esc>
 
 " Nerd-Tree settings ---------------------------------------------------------
-noremap <leader>n :NERDTreeToggle<cr>
+noremap <leader>m :NERDTreeToggle<cr>
 let NERDTreeWinSize=50
 let NERDTreeQuitOnOpen=1
 let NERDTreeChDirMode=2
